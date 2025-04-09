@@ -1,1 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>禁止ワードゲーム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>禁止ワードゲーム</header>
+
+  <main>
+    <section id="description">
+      <h2>遊び方</h2>
+      <p>
+        このゲームは「言っちゃダメなワード」をランダムに出して、5秒後に音でスタートを知らせます。<br>
+        出たワードを言わないようにしながら会話を楽しもう！<br>
+        3人以上で遊ぶと盛り上がるよ！
+      </p>
+    </section>
+
+    <div id="startScreen" class="screen visible">
+      <h1>準備はいい？</h1>
+      <button onclick="startGame()">スタート</button>
+    </div>
+
+    <div id="wordScreen" class="screen">
+      <h2>禁止ワード</h2>
+      <div id="word">...</div>
+    </div>
+  </main>
+  
+  <audio id="sound" src="https://www.soundjay.com/buttons/sounds/beep-07.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
