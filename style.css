@@ -74,6 +74,20 @@ button:hover {
   padding: 20px 40px;
   border: 2px solid #ff4655;
   border-radius: 10px;
+  animation: shrinkWord 5s forwards; /* アニメーションを追加 */
+}
+
+@keyframes shrinkWord {
+  0% {
+    font-size: 64px; /* 初期状態のフォントサイズ */
+  }
+  50% {
+    font-size: 48px; /* 半分の時間経過で少し小さくなる */
+  }
+  100% {
+    font-size: 24px; /* 最後はさらに小さくなる */
+    opacity: 0; /* 最後には消える */
+  }
 }
 
 footer {
