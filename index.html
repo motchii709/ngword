@@ -21,6 +21,10 @@
 
     <div id="startScreen" class="screen visible">
       <h1>準備はいい？</h1>
+      <label for="numWords">お題の個数:</label>
+      <input type="range" id="numWords" min="1" max="10" value="1">
+      <span id="numWordsDisplay">1</span>個
+      <br><br>
       <button onclick="startGame()">スタート</button>
     </div>
 
@@ -29,7 +33,7 @@
     </div>
 
     <div id="wordScreen" class="screen">
-      <h2 id="word">...</h2>
+      <div id="wordsContainer"></div>
       <p>この画面を他のプレイヤーに見せてください</p>
     </div>
 
