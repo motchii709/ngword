@@ -16,6 +16,7 @@ header {
     letter-spacing: 2px;
     color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin: 0;
 }
 
 main {
@@ -25,6 +26,7 @@ main {
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
+    box-sizing: border-box;
 }
 
 section#description {
@@ -76,7 +78,8 @@ button:active {
 }
 
 #numWords {
-    width: 200px;
+    width: 80%;
+    max-width: 300px;
 }
 
 #wordsContainer {
@@ -91,4 +94,62 @@ button:active {
 
 footer {
     display: none;
+}
+
+/* スマホ対応のスタイル */
+@media (max-width: 768px) {
+    header {
+        font-size: 24px;
+        padding: 15px 0;
+    }
+
+    section#description {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    section#description h2 {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 12px 25px;
+    }
+
+    #numWords {
+        width: 90%;
+    }
+
+    #wordsContainer {
+        font-size: 40px;
+        padding: 15px 30px;
+    }
+
+    #countdownScreen h2,
+    #wordScreen p {
+        font-size: 20px;
+    }
+}
+
+/* より小さいスクリーン（モバイル）の場合 */
+@media (max-width: 480px) {
+    main {
+        padding: 20px 10px;
+    }
+
+    #wordsContainer {
+        font-size: 36px;
+        padding: 10px 20px;
+    }
+
+    #countdownScreen h2,
+    #wordScreen p {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
 }
