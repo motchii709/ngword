@@ -12,7 +12,10 @@ fetch('words.txt')
   });
 
 const startScreen = document.getElementById('startScreen');
+const countdownScreen = document.getElementById('countdownScreen');
 const wordScreen = document.getElementById('wordScreen');
+const showScreen = document.getElementById('showScreen');
+const countdownDisplay = document.getElementById('countdown');
 const wordDisplay = document.getElementById('word');
 const sound = document.getElementById('sound');
 
@@ -23,18 +26,29 @@ function startGame() {
   }
 
   startScreen.classList.remove('visible');
-  wordScreen.classList.remove('visible');
+  countdownScreen.classList.add('visible');
+  let countdown = 5;
+  countdownDisplay.textContent = countdown;
 
-  setTimeout(() => {
-    const randomWord = words[Math.floor(Math.random() * words.length)];
-    wordDisplay.textContent = randomWord;
-    wordScreen.classList.add('visible');
-
-    setTimeout(() => {
-      sound.play();
-      wordScreen.classList.remove('visible');
-      startScreen.classList.add('visible');
-    }, 5000);
-  }, 5000);
+  // カウントダウン処理
+  const countdownInterval = setInterval(() => {
+    countdown--;
+    countdownDisplay.textContent = countdown;
+    if (countdown === 0) {
+      clearInterval(countdownInterval);
+      countdownScreen.classList.remove('visible');
+      setTimeout(showWordScreen, 1000); // 1秒後に単語表示
+    }
+  }, 1000);
 }
 
+function showWordScreen() {
+  const randomWord = words[Math.floor(Math.random() * words.length)];
+  wordDisplay.textContent = randomWord;
+  wordScreen.classList.add('visible');
+  setTimeout(() => {
+    sound.play(); // 音を鳴らす
+    wordScreen.classList.remove('visible');
+    showScreen.classList.add('visible');
+  }, 5000); // 5秒後に音を鳴らして次の画面へ
+}
