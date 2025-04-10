@@ -90,30 +90,12 @@ button:active {
     0% {
         font-size: 64px;
     }
-    50% {
-        font-size: 48px;
-    }
     100% {
-        font-size: 24px;
+        font-size: 64px;
         opacity: 0;
     }
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: #aaa;
-}
-
-h1 {
-    width: 800px;
-    position: relative;
-    left: -100px;
-    letter-spacing: -1px;
-    line-height: 60px;
-    font-size: 60px;
-    font-weight: 100;
-    margin: 0px 0 50px 0;
-    text-shadow: 0 1px 0 #fff;
+    display: none;
 }
