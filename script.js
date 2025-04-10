@@ -14,7 +14,6 @@ fetch('words.txt')
 const startScreen = document.getElementById('startScreen');
 const countdownScreen = document.getElementById('countdownScreen');
 const wordScreen = document.getElementById('wordScreen');
-const showScreen = document.getElementById('showScreen');
 const countdownDisplay = document.getElementById('countdown');
 const wordDisplay = document.getElementById('word');
 const sound = document.getElementById('sound');
@@ -48,8 +47,6 @@ function showWordScreen() {
   wordScreen.classList.add('visible');
   setTimeout(() => {
     sound.play(); // 音を鳴らす
-    wordScreen.classList.remove('visible');
-    showScreen.classList.add('visible');
     startWordDisappearCountdown(); // お代が消えるカウントダウンを開始
   }, 5000); // 5秒後に音を鳴らして次の画面へ
 }
@@ -60,7 +57,7 @@ function startWordDisappearCountdown() {
     disappearTime--;
     if (disappearTime === 0) {
       clearInterval(disappearInterval);
-      showScreen.classList.remove('visible');
+      wordScreen.classList.remove('visible'); // お代の画面を消す
     }
   }, 1000);
 }
