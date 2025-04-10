@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>禁止ワードゲーム</title>
+  <title>NGワードゲーム</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
     <section id="description">
       <h2>遊び方</h2>
       <p>
-        このゲームは「言っちゃダメなワード」をランダムに出して、5秒後に音でスタートを知らせます。<br>
+        このゲームは「NGワード」をランダムに出して、5秒後に音でスタートを知らせます。<br>
         出たワードを言わないようにしながら会話を楽しもう！<br>
         3人以上で遊ぶと盛り上がるよ！
       </p>
@@ -25,20 +25,24 @@
     </div>
 
     <div id="countdownScreen" class="screen">
-      <h2><span id="countdown">5</span>秒</h2>
+      <h2>カウントダウン: <span id="countdown">5</span>秒</h2>
     </div>
 
     <div id="wordScreen" class="screen">
-      <h2>この言葉は禁止！</h2>
-      <div id="word">...</div>
+      <h2 id="word">...</h2>
+      <p>この画面を他のプレイヤーに見せてください</p>
     </div>
 
     <div id="showScreen" class="screen">
-      <p>この画面を他のプレイヤーに見せてください</p>
+      <p>次のワードが表示されました！</p>
     </div>
   </main>
-  
-  <audio id="sound" src="https://soundeffect-lab.info/sound/anime/mp3/drum-japanese1.mp3"></audio>
+
+  <footer>
+    &copy; 2025 禁止ワードゲーム
+  </footer>
+
+  <audio id="sound" src="https://www.soundjay.com/buttons/sounds/beep-07.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
