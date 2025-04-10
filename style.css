@@ -75,7 +75,11 @@ button:active {
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 
-#word {
+#numWords {
+    width: 200px;
+}
+
+#wordsContainer {
     font-size: 64px;
     color: #ffffff;
     margin-top: 50px;
@@ -83,17 +87,6 @@ button:active {
     padding: 20px 40px;
     border: 2px solid #ff4454;
     border-radius: 10px;
-    animation: shrinkWord 5s forwards;
-}
-
-@keyframes shrinkWord {
-    0% {
-        font-size: 64px;
-    }
-    100% {
-        font-size: 64px;
-        opacity: 0;
-    }
 }
 
 footer {
