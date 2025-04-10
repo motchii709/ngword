@@ -50,5 +50,17 @@ function showWordScreen() {
     sound.play(); // 音を鳴らす
     wordScreen.classList.remove('visible');
     showScreen.classList.add('visible');
+    startWordDisappearCountdown(); // お代が消えるカウントダウンを開始
   }, 5000); // 5秒後に音を鳴らして次の画面へ
+}
+
+function startWordDisappearCountdown() {
+  let disappearTime = 5;
+  const disappearInterval = setInterval(() => {
+    disappearTime--;
+    if (disappearTime === 0) {
+      clearInterval(disappearInterval);
+      showScreen.classList.remove('visible');
+    }
+  }, 1000);
 }
