@@ -15,8 +15,14 @@ const startScreen = document.getElementById('startScreen');
 const countdownScreen = document.getElementById('countdownScreen');
 const wordScreen = document.getElementById('wordScreen');
 const countdownDisplay = document.getElementById('countdown');
-const wordDisplay = document.getElementById('word');
+const wordsContainer = document.getElementById('wordsContainer');
 const sound = document.getElementById('sound');
+const numWordsSlider = document.getElementById('numWords');
+const numWordsDisplay = document.getElementById('numWordsDisplay');
+
+numWordsSlider.addEventListener('input', () => {
+  numWordsDisplay.textContent = numWordsSlider.value;
+});
 
 function startGame() {
   if (words.length === 0) {
@@ -42,8 +48,20 @@ function startGame() {
 }
 
 function showWordScreen() {
-  const randomWord = words[Math.floor(Math.random() * words.length)];
-  wordDisplay.textContent = randomWord;
+  const numWords = parseInt(numWordsSlider.value);
+  const selectedWords = [];
+
+  // ランダムに選んだ単語を配列に格納
+  while (selectedWords.length < numWords) {
+    const randomWord = words[Math.floor(Math.random() * words.length)];
+    if (!selectedWords.includes(randomWord)) {
+      selectedWords.push(randomWord);
+    }
+  }
+
+  // 表示する単語をcontainerに追加
+  wordsContainer.innerHTML = selectedWords.join('<br>');
+
   wordScreen.classList.add('visible');
   setTimeout(() => {
     sound.play(); // 音を鳴らす
